@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  user: Ember.inject.service(),
+
   model: function () {
-    return Promise.resolve();
+    return this.get('user').getUser();
   }
 });
