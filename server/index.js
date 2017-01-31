@@ -9,7 +9,10 @@
 //   });
 // };
 
-var bodyParser = require("body-parser");
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var passport = require('./passport');
 
 module.exports = function(app) {
   var globSync   = require('glob').sync;
@@ -19,7 +22,10 @@ module.exports = function(app) {
   // Log proxy requests
   var morgan  = require('morgan');
   app.use(morgan('dev'));
+  app.use(cookieParser());
   app.use(bodyParser());
+  app.use(session({secret: "secret"}));
+  passport(app);
 
   mocks.forEach(function(route) { route(app); });
   proxies.forEach(function(route) { route(app); });
