@@ -7,7 +7,6 @@ export default Ember.Component.extend({
   init: function () {
     this._super(...arguments);
     this.get('sites').getSites().then(sites => {
-      console.log(sites);
       this.set('siteList', sites);
     });
   }
