@@ -1,7 +1,7 @@
 {{#each siteList as |site|}}
   <div>
     <h3>
-      {{site.name}}
+      {{#link-to "site" site.id}}{{site.name}}{{/link-to}}
     </h3>
   </div>
 {{/each}}
