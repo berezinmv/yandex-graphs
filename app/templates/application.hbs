@@ -1,7 +1,8 @@
 {{#unless model}}
-  <a href="/login">Login via Yandex</a>
+  <a href="/authenticate">Login via Yandex</a>
 {{/unless}}
 {{#if model}}
+  <a href="/logout">Logout</a>
   {{model.name}}
   {{outlet}}
 {{/if}}
