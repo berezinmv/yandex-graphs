@@ -26,7 +26,7 @@ function getRequestUrlForSite(token, siteId) {
  * @returns {string}
  */
 function getRequestUrlForData(token, requestParameters) {
-  let requestUrl = 'https://api-metrika.yandex.ru/stat/v1/data.json';
+  let requestUrl = 'https://api-metrika.yandex.ru/stat/v1/data/bytime';
   requestUrl = `${requestUrl}?oauth_token=${token}`;
   let parameterKeys = Object.keys(requestParameters);
   if (parameterKeys.length) {
