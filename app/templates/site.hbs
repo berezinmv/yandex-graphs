@@ -1,19 +1,19 @@
 {{model.name}}
 <div>
   <label>
-    Metric
+    Показатель
     <select onchange={{action 'setMetric' value='target.value'}}>
-      <option value="ym:s:visits">Visits</option>
-      <option value="ym:s:pageviews">Pageviews</option>
-      <option value="ym:s:users">Users</option>
+      <option value="ym:s:visits">Визиты</option>
+      <option value="ym:s:pageviews">Посещения траниц</option>
+      <option value="ym:s:users">Пользоавтели</option>
     </select>
   </label>
   <label>
-    Start date
+    Дата начала
     {{bootstrap-datepicker value=startDate endDate=endDate changeDate="setStartDate" language="ru"}}
   </label>
   <label>
-    End date
+    Дата конца
     {{bootstrap-datepicker value=endDate startDate=startDate changeDate="setEndDate" language="ru"}}
   </label>
 </div>
