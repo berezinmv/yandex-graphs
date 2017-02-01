@@ -1,1 +1,20 @@
 {{model.name}}
+<div>
+  <label>
+    Metric
+    <select onchange={{action 'setMetric' value='target.value'}}>
+      <option value="ym:s:visits">Visits</option>
+      <option value="ym:s:pageviews">Pageviews</option>
+      <option value="ym:s:users">Users</option>
+    </select>
+  </label>
+  <label>
+    Start date
+    {{bootstrap-datepicker value=startDate endDate=endDate changeDate="setStartDate" language="ru"}}
+  </label>
+  <label>
+    End date
+    {{bootstrap-datepicker value=endDate startDate=startDate changeDate="setEndDate" language="ru"}}
+  </label>
+</div>
+{{data-chart data=datasource}}
