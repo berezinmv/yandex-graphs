@@ -9,7 +9,6 @@ export default Ember.Component.extend({
     let categories = data.time_intervals
       .map(interval => interval
         .map(date => new Date(date).toLocaleDateString('ru')).join(' - '));
-    console.log(categories);
     return {
       chart: {
         type: 'spline'
